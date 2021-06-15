@@ -1,2 +1,2 @@
 #!/bin/bash
-rm *.js
+cat iacta tail -1 >> iacta
