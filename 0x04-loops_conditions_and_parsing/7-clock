@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Check your code
 hour_counter=0
 while [ $hour_counter -lt 13 ]; do
 echo "Hour: $hour_counter"
