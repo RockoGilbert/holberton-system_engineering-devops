@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Use quotes
+list=$(ls -1)
+for f in $list; do
+echo "$f" | cut -d "-" -f2-
+done
