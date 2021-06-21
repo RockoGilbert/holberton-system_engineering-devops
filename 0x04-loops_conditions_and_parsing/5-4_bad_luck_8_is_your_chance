@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#else if 
 counter=0
 while [ $counter -lt 10 ]
 do (( counter+=1 ))
