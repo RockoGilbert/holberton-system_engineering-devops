@@ -5,7 +5,8 @@ while [ $i -le 10 ]
 do
     echo "Holberton School"
     if [ $i -eq 9 ]
-    then echo "Hi"
+    then
+	echo "Hi"
     fi
     ((x++))
     done
