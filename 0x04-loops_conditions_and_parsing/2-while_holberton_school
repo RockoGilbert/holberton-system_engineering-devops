@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # While loops
-i=0
+i=1
 while [ $i -le 10 ]
 do
-echo Holberton School: $i
-((i++))
+    echo "Holberton School"
+    i=$(( i + 1 ))
 done
