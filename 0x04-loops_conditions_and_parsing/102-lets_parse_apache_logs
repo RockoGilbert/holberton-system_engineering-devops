@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-awk -F' ' '{ print $1 " " $9 }' apache-access.logxs
+#Script that parses Apache logs
+awk -F' ' '{ print $1 " " $9 }' apache-access.log
