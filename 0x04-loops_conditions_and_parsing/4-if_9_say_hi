@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-#setting strings
-string_a'Holberton School'
-counter=10
-while [ $counter -lt 10 ]
-do echo "string_a"
-(( counter=1 ))
-if [ $counter -eq 9 ]
-then echo "Hi"
-fi
-done
+#Creating a bash script that creates an if statement
+i=1
+while [ $i -le 10 ]
+do
+    echo "Holberton School"
+    if [ $i -eq 9 ]
+    then echo "Hi"
+    fi
+    ((x++))
+    done
+
+    
