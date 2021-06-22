@@ -8,7 +8,7 @@ do
     then
 	echo "Hi"
     fi
-    ((x++))
+    ((i++))
     done
 
     
