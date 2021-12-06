@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-# redirection
-sudo apt-get -y update
-sudo apt-get -y  install nginx
-echo 'Hello World' | sudo tee /var/www/html/index.html
-sudo ufw allow nginx
-sudo service nginx start
-REDIC="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
-SRC="/etc/nginx/sites-available/default"
-sudo -ie sed "$REDIC" $SRC
+# sets up a redirect page for a web server
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.html
+str="\trewrite ^/redirect_me https://openpuppies.com/ permanent;\n}"
+sed -i "s@^}@$str@" /etc/nginx/sites-available/default
+service nginx restart
