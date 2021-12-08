@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-# sets up a redirect page for a web server
+# Installs nginx
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
-echo "Hello World!" | sudo tee /var/www/html/index.html
-string="server_name evolve.tech;\n\tlocation\/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com\/watch\?v=QH2-TGUlwu4;\n\t}"
-sudo sed -i "s/server_name _;/$string/" /etc/nginx/sites-available/default
+sudo service nginx start
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+
+searchString="\tlocation / {"
+stringReplace="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
+sudo sed -i "s@^$searchString@$stringReplace@" /etc/nginx/sites-available/default
 sudo service nginx restart
